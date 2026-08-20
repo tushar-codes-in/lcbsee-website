@@ -1,0 +1,18 @@
+- [x] Pair the exact Scope images with their correct subjects: Energy, Bioprocess, Pollution, and Metabolo- and Genomics.
+- [x] Reorder the Scope desktop grid to match the live Wix reference.
+- [x] Reproduce the supplied mobile-screenshot scope order, dimensions, labels, and spacing.
+- [x] Capture desktop and mobile Scope screenshots and verify all corrected pairings.
+- [x] Match the mobile masthead, conference title, logos, and notice placement to the supplied home-page screenshots.
+- [x] Rebuild the hero event-details section, action buttons, background treatment, and countdown band to the reference proportions.
+- [x] Align the mobile footer logo, credit, social-icon sizing, and spacing to the supplied screenshots.
+- [x] Verify the reconstructed home page at desktop and mobile viewports.
+- [x] Compare the desktop Wix home-page structure, proportions, navigation, and footer against the rebuilt site.
+- [x] Rebuild desktop-only home-page styling to match the Wix desktop reference without changing the approved mobile layout.
+- [x] Verify the updated desktop page and confirm the mobile breakpoint remains unchanged.
+- [x] Prepare a complete downloadable source archive for user-managed deployment.
+- [x] Write a step-by-step self-hosting guide for the packaged React/Vite site.
+- [x] Include static-hosting route rewrites, common errors, and optional custom-domain setup.
+- [x] Deliver the guide as a downloadable Markdown document.
+- [x] Add Vercel configuration for the Vite static build and SPA route rewrites.
+- [x] Verify the production build output and Vercel deployment settings.
+- [ ] Deliver corrected Vercel files and redeployment steps.
