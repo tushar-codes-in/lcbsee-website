@@ -113,12 +113,12 @@ a { color: inherit; }
 .home-page .social-links img { width: 33px; height: 33px; }
 
 @media (min-width: 769px) {
-  /* Wix desktop reference: edge-set logos, 132px masthead, navigation over hero, and 811px photograph. */
+  /* Wix desktop reference: 132px masthead, fully visible ICBSEE mark, navigation over hero, and 811px photograph. */
   .site-header { height: 132px; }
   .masthead { position: relative; min-height: 132px; display: flex; justify-content: center; padding: 0; }
   .masthead h1 { width: 980px; height: 108px; display: grid; place-items: center; margin: 0; font-size: 32px; line-height: 1.04; }
   .masthead-logo { position: absolute; z-index: 1; }
-  .masthead-logo-left { top: 12px; left: -27px; }
+  .masthead-logo-left { top: 12px; left: 0; }
   .masthead-logo-right { top: 19px; right: -17px; }
   .masthead-logo img { width: 97px; max-height: 104px; }
   .masthead-logo-right img { width: 90px; max-height: 90px; }
@@ -136,8 +136,15 @@ a { color: inherit; }
   .desktop-nav > a:nth-child(8) { width: 131px; }
   .desktop-nav > a:nth-child(9) { width: 156px; }
 
-  /* Interior Scope content must start below the navigation that intentionally overlays the desktop masthead. */
-  .scope-page { padding-top: 130px; }
+  /* Interior pages clear the 41px navigation that intentionally overlays the desktop masthead. */
+  .scope-page,
+  .speakers-page,
+  .abstract-page,
+  .registration-page,
+  .sponsors-page,
+  .publications-page,
+  .reach-page,
+  .chapters-page { padding-top: 130px; }
   .scope-detail-page { padding-top: 137px; }
 
   .home-building, .home-building-overlay { min-height: 811px; }
@@ -188,8 +195,7 @@ a { color: inherit; }
 .scope-back-link svg { width: 34px; height: 34px; fill: currentColor; stroke-width: 3.5; }
 
 @media (min-width: 769px) {
-  /* This follows the base Scope rules so it clears the overlaid desktop navigation. */
-  .scope-page { padding-top: 130px; }
+  /* Scope detail pages need the same header clearance plus their original internal inset. */
   .scope-detail-page { padding-top: 137px; }
 }
 
@@ -256,6 +262,19 @@ a { color: inherit; }
 .lightbox-arrow.right { right: 22px; }
 
 .mobile-nav-overlay { display: none; }
+
+@media (min-width: 769px) {
+  /* Final desktop override: all interior page headings begin beneath the overlaid Wix navigation. */
+  .scope-page,
+  .speakers-page,
+  .abstract-page,
+  .registration-page,
+  .sponsors-page,
+  .publications-page,
+  .reach-page,
+  .chapters-page { padding-top: 130px; }
+  .scope-detail-page { padding-top: 137px; }
+}
 
 @keyframes announcementBlockDesktop { 0%, 12% { transform: translateX(-50%); } 46%, 64% { transform: translateX(0); } 88%, 100% { transform: translateX(50%); } }
 @keyframes announcementBlockMobile { 0%, 10% { transform: translateX(-50%); } 42%, 65% { transform: translateX(0); } 90%, 100% { transform: translateX(50%); } }
