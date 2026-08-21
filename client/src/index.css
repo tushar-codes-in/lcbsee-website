@@ -136,6 +136,10 @@ a { color: inherit; }
   .desktop-nav > a:nth-child(8) { width: 131px; }
   .desktop-nav > a:nth-child(9) { width: 156px; }
 
+  /* Interior Scope content must start below the navigation that intentionally overlays the desktop masthead. */
+  .scope-page { padding-top: 130px; }
+  .scope-detail-page { padding-top: 137px; }
+
   .home-building, .home-building-overlay { min-height: 811px; }
   .home-building { background-image: url("/media/lcbsee/wix-home-hero.jpg"); background-position: center; }
   .home-building-overlay { background: rgba(247, 225, 225, .08); }
@@ -182,6 +186,12 @@ a { color: inherit; }
 .scope-detail-content li + li { margin-top: 13px; }
 .scope-back-link { display: flex; align-items: center; justify-content: flex-end; gap: 2px; margin-top: 34px; color: #101010; font-family: Arial, Helvetica, sans-serif; font-size: clamp(19px, 2.2vw, 29px); text-decoration: underline; }
 .scope-back-link svg { width: 34px; height: 34px; fill: currentColor; stroke-width: 3.5; }
+
+@media (min-width: 769px) {
+  /* This follows the base Scope rules so it clears the overlaid desktop navigation. */
+  .scope-page { padding-top: 130px; }
+  .scope-detail-page { padding-top: 137px; }
+}
 
 .speakers-page { padding-top: 40px; }
 .speakers-grid { max-width: 1100px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 56px 40px; margin: 45px auto 0; }
