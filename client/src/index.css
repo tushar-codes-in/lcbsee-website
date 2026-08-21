@@ -73,7 +73,7 @@ a { color: inherit; }
 .social-links a:hover img { transform: translateY(-2px) scale(1.05); }
 
 .home-page { min-height: calc(100vh - 170px); display: flex; flex-direction: column; }
-.home-building { min-height: 520px; background-size: cover; background-position: center; }
+.home-building { min-height: 520px; background-image: url("/media/lcbsee/bm-building.jpg"); background-size: cover; background-position: center; }
 .home-building-overlay { min-height: 520px; display: flex; align-items: flex-start; background: rgba(247,225,225,.72); overflow: hidden; }
 .home-announcement { width: 100%; display: flex; flex-direction: column; align-items: center; padding: 9px 0 10px; overflow: hidden; text-align: center; }
 .announcement-marquee { width: 100%; height: 37px; overflow: hidden; }
@@ -111,6 +111,57 @@ a { color: inherit; }
 .home-page .footer-logo { width: 48px; height: 48px; }
 .home-page .site-footer p { font-size: 12px; }
 .home-page .social-links img { width: 33px; height: 33px; }
+
+@media (min-width: 769px) {
+  /* Wix desktop reference: edge-set logos, 132px masthead, navigation over hero, and 811px photograph. */
+  .site-header { height: 132px; }
+  .masthead { position: relative; min-height: 132px; display: flex; justify-content: center; padding: 0; }
+  .masthead h1 { width: 980px; height: 108px; display: grid; place-items: center; margin: 0; font-size: 32px; line-height: 1.04; }
+  .masthead-logo { position: absolute; z-index: 1; }
+  .masthead-logo-left { top: 12px; left: -27px; }
+  .masthead-logo-right { top: 19px; right: -17px; }
+  .masthead-logo img { width: 97px; max-height: 104px; }
+  .masthead-logo-right img { width: 90px; max-height: 90px; }
+
+  .desktop-nav { position: absolute; z-index: 30; top: 147px; left: 20px; right: 20px; height: 41px; display: flex; justify-content: space-between; gap: 0; padding: 0; background: transparent; }
+  .desktop-nav > a, .chapter-menu, .chapter-menu > button { height: 41px; min-height: 41px; padding: 0; font-size: 14px; }
+  .desktop-nav > a:nth-child(1) { width: 76px; }
+  .desktop-nav > a:nth-child(2) { width: 79px; }
+  .desktop-nav > a:nth-child(3) { width: 139px; }
+  .desktop-nav > a:nth-child(4) { width: 200px; }
+  .desktop-nav > a:nth-child(5) { width: 130px; }
+  .desktop-nav > a:nth-child(6) { width: 104px; }
+  .chapter-menu { width: 145px; }
+  .chapter-menu > button { width: 100%; }
+  .desktop-nav > a:nth-child(8) { width: 131px; }
+  .desktop-nav > a:nth-child(9) { width: 156px; }
+
+  .home-building, .home-building-overlay { min-height: 811px; }
+  .home-building { background-image: url("/media/lcbsee/wix-home-hero.jpg"); background-position: center; }
+  .home-building-overlay { background: rgba(247, 225, 225, .08); }
+  .home-announcement { padding: 79px 0 0; }
+  .announcement-marquee { height: 48px; }
+  .desktop-announcement span { font-size: 17px; line-height: 1.4; }
+  .home-announcement > .conference-code { width: 980px; height: 136px; display: grid; place-items: start center; margin-top: 54px; font-size: 100px; line-height: 1.2; }
+  .desktop-home-subtitle { min-height: 30px; margin-top: 10px; font-size: 20px; line-height: 1.5; }
+  .event-details { grid-template-columns: 25px auto; row-gap: 41px; margin-top: 19px; }
+  .event-date { font-size: 28px; line-height: 1.7; }
+  .event-location { font-size: 21px; line-height: 1.67; }
+  .home-actions { gap: 21px; margin-top: 41px; }
+  .home-actions a { width: 244px; min-width: 244px; min-height: 51px; display: grid; place-items: center; padding: 0 14px; font-size: 16px; }
+
+  .home-countdown { width: 980px; min-height: 56px; justify-content: flex-start; gap: 0; margin: -55px auto 0; padding: 0; }
+  .home-countdown-label { width: 351px; margin: 0; font-size: 24px; }
+  .home-countdown-values { gap: 7px; }
+  .home-countdown-pair { gap: 7px; }
+  .home-countdown-pair small { font-size: 11px; }
+  .home-countdown-pair strong, .home-countdown-pair i { font-size: 20px; }
+  .home-page .site-footer { min-height: 85px; justify-content: space-between; gap: 0; padding: 6px 8px; }
+  .home-page .footer-logo { width: 63px; height: 68px; }
+  .home-page .site-footer p { flex: 1; font-size: 15px; }
+  .home-page .social-links { gap: 10px; }
+  .home-page .social-links img { width: 39px; height: 39px; }
+}
 
 .scope-page { padding-top: 40px; }
 .scope-intro { max-width: 860px; margin: 24px auto 32px; font-size: clamp(16px, 1.65vw, 21px); line-height: 1.37; text-align: center; }

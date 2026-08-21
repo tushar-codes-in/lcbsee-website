@@ -229,7 +229,7 @@ function PageLayout({ children }: { children: React.ReactNode }) {
 function HomePage() {
   return (
     <main className="home-page">
-      <section className="home-building" style={{ backgroundImage: `url(${assets.building})` }}>
+      <section className="home-building">
         <div className="home-building-overlay">
           <section className="home-announcement" aria-label="Abstract submission announcement">
             <div className="announcement-marquee">
