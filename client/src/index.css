@@ -116,8 +116,21 @@ a { color: inherit; }
 .scope-intro { max-width: 860px; margin: 24px auto 32px; font-size: clamp(16px, 1.65vw, 21px); line-height: 1.37; text-align: center; }
 .scope-grid, .journal-grid { max-width: 1050px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px 50px; margin: 0 auto; }
 .scope-grid article, .journal-grid article { display: flex; flex-direction: column; align-items: center; }
+.scope-link-card { display: flex; flex-direction: column; align-items: center; width: 100%; color: inherit; text-decoration: none; }
 .scope-grid img { width: 100%; aspect-ratio: 3/4; object-fit: cover; background: #fff; }
 .scope-grid h3, .journal-grid h3 { margin: 9px 0 0; color: #075d2c; font-family: var(--condensed); font-size: clamp(19px, 2vw, 29px); font-weight: 500; line-height: 1.02; text-align: center; text-decoration: underline; text-decoration-thickness: 1px; }
+.scope-link-card img { transition: transform 180ms cubic-bezier(.23,1,.32,1), box-shadow 180ms cubic-bezier(.23,1,.32,1); }
+.scope-link-card:hover img { transform: translateY(-3px); box-shadow: 0 6px 15px rgba(4,68,26,.24); }
+.scope-link-card:focus-visible { outline: 3px solid #075d2c; outline-offset: 6px; }
+
+.scope-detail-page { min-height: 620px; padding: 42px 9vw 64px; background: var(--lime); }
+.scope-detail-content { max-width: 920px; margin: 0 auto; }
+.scope-detail-content h2 { margin: 0 0 35px; color: #075d2c; font-family: Georgia, "Times New Roman", serif; font-size: clamp(38px, 5.2vw, 68px); font-weight: 500; line-height: 1.04; text-align: center; }
+.scope-detail-content ul { margin: 0; padding-left: 43px; color: #075d2c; font-family: Georgia, "Times New Roman", serif; font-size: clamp(20px, 2.35vw, 32px); line-height: 1.34; }
+.scope-detail-content li { padding-left: 8px; }
+.scope-detail-content li + li { margin-top: 13px; }
+.scope-back-link { display: flex; align-items: center; justify-content: flex-end; gap: 2px; margin-top: 34px; color: #101010; font-family: Arial, Helvetica, sans-serif; font-size: clamp(19px, 2.2vw, 29px); text-decoration: underline; }
+.scope-back-link svg { width: 34px; height: 34px; fill: currentColor; stroke-width: 3.5; }
 
 .speakers-page { padding-top: 40px; }
 .speakers-grid { max-width: 1100px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 56px 40px; margin: 45px auto 0; }
@@ -254,6 +267,14 @@ a { color: inherit; }
   .scope-grid, .journal-grid { grid-template-columns: 1fr; gap: 22px; }
   .scope-grid img { width: min(77vw, 310px); aspect-ratio: 3 / 4; }
   .scope-grid h3 { margin-top: 10px; font-size: clamp(18px, 5.1vw, 28px); }
+  .scope-link-card:hover img { transform: none; box-shadow: none; }
+  .scope-detail-page { min-height: 520px; padding: 0 28px 46px; }
+  .scope-detail-content h2 { margin: 0 -10px 28px; padding-top: 12px; font-size: clamp(37px, 11.7vw, 55px); line-height: 1.15; }
+  .scope-detail-content ul { padding-left: 30px; font-size: clamp(21px, 6.95vw, 30px); line-height: 1.36; }
+  .scope-detail-content li { padding-left: 4px; }
+  .scope-detail-content li + li { margin-top: 17px; }
+  .scope-back-link { margin-top: 27px; font-size: clamp(20px, 6.55vw, 28px); }
+  .scope-back-link svg { width: 31px; height: 31px; }
   .journal-grid h3 { font-size: 17px; }
   .speakers-page { padding-top: 0; }
   .speakers-grid { grid-template-columns: 1fr; gap: 46px; margin-top: 23px; }

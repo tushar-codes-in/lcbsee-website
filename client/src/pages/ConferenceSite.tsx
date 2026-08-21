@@ -49,14 +49,40 @@ const speakers = [
   ["/media/lcbsee/speaker-sanjoy-ghosh.png", "Prof. Sanjoy Ghosh", "IIT Roorkee, India"],
 ] as const;
 
-const scopeItems = [
-  ["ENVIRONMENT", "/media/lcbsee/wix-scope-environment.jpg"],
-  ["ENERGY", "/media/lcbsee/wix-scope-metabolomics.jpg"],
-  ["BIOPROCESS", "/media/lcbsee/wix-scope-energy.jpg"],
-  ["POLLUTION", "/media/lcbsee/wix-scope-bioprocess.jpg"],
-  ["METABOLO- AND GENOMICS", "/media/lcbsee/wix-scope-pollution.png"],
-  ["WASTEWATER", "/media/lcbsee/wix-scope-wastewater.png"],
-] as const;
+type ScopeDetail = {
+  slug: string;
+  label: string;
+  title: string;
+  image: string;
+  topics: string[];
+};
+
+const scopeDetails: ScopeDetail[] = [
+  {
+    slug: "environment", label: "ENVIRONMENT", title: "ENVIRONMENT", image: "/media/lcbsee/wix-scope-environment.jpg",
+    topics: ["Biodiversity and Omics", "Bioprocess and Bio-systems", "Bioremediation: solid and liquid wastes", "Hazardous substances: detection and management techniques", "Carbon sequestration and storage", "Green organic synthesis routes", "Product engineering in the Bio-Industries", "Product innovation, development and economics", "Enzymes of environmental importance", "Biomaterials and Nanotechnology", "Recovery and recycling of effluents", "Value added products from wastes"],
+  },
+  {
+    slug: "energy", label: "ENERGY", title: "ENERGY", image: "/media/lcbsee/wix-scope-energy.jpg",
+    topics: ["Municipal wastewater treatment", "Sewage treatment", "Industrial wastewater treatment", "Power plant wastewater treatment", "Nuclear plant wastewater treatment", "Advance technology in wastewater treatment", "Recycle, recovery and reuse of resources from wastewater", "Energy generation from wastewater"],
+  },
+  {
+    slug: "bioprocess", label: "BIOPROCESS", title: "BIOPROCESS", image: "/media/lcbsee/wix-scope-bioprocess.jpg",
+    topics: ["Advance approaches for better quality product", "Enzymes of Industrial importance", "Biomass Processing", "Bioprocess for Food and Fermentation"],
+  },
+  {
+    slug: "pollution", label: "POLLUTION", title: "POLLUTION", image: "/media/lcbsee/wix-scope-pollution.png",
+    topics: ["Municipal wastewater treatment", "Sewage treatment", "Industrial wastewater treatment", "Power plant wastewater treatment", "Nuclear plant wastewater treatment", "Advance technology in wastewater treatment", "Recycle, recovery and reuse of resources from wastewater", "Energy generation from wastewater"],
+  },
+  {
+    slug: "metabolo-genomics", label: "METABOLO- AND GENOMICS", title: "Metabolic Engineering and Molecular Biology", image: "/media/lcbsee/wix-scope-metabolomics.jpg",
+    topics: ["Metagenomics of environmental samples", "Biodiversity analysis from environmental samples", "Microbiome analysis", "Bioinformatics analysis for whole genome", "Metabolomics for pathway analysis", "Proteomics for improved product and process", "Transcriptomics for improved product and process"],
+  },
+  {
+    slug: "wastewater", label: "WASTEWATER", title: "WASTEWATER", image: "/media/lcbsee/wix-scope-wastewater.png",
+    topics: ["Heavy metal toxicity", "Health effect of radio nucleotides", "Emerging contaminants and their effects on health", "Microbiome analysis for pollutant toxicity", "Carcinogenesis", "Metabolomics for pathway analysis", "System biology approach for toxicity", "Cause and remediation of diseases from environment"],
+  },
+];
 
 const journals = [
   ["APPLIED BIOCHEMISRTY AND BIOTECHNOLOGY", "/media/lcbsee/journal-applied-biochem.webp", "https://link.springer.com/journal/12010"],
@@ -250,7 +276,11 @@ function HomePage() {
 }
 
 function ScopePage() {
-  return <PageLayout><section className="lime-field scope-page"><h2>SCOPE OF THE CONFERENCE</h2><p className="scope-intro">The major thrust of ICBSEE-India-2026 is to emphasize the recent innovations and development of bioprocess strategies toward environment and energy. Keeping this in view, exclusive sessions will be dedicated to personnel from broad areas of academia, industry, and research on the thematic-focused regions.</p><div className="scope-grid">{scopeItems.map(([label, image]) => <article key={label}><img src={image} alt={label} /><h3>{label}</h3></article>)}</div></section></PageLayout>;
+  return <PageLayout><section className="lime-field scope-page"><h2>SCOPE OF THE CONFERENCE</h2><p className="scope-intro">The major thrust of ICBSEE-India-2026 is to emphasize the recent innovations and development of bioprocess strategies toward environment and energy. Keeping this in view, exclusive sessions will be dedicated to personnel from broad areas of academia, industry, and research on the thematic-focused regions.</p><div className="scope-grid">{scopeDetails.map(({ label, image, slug }) => <article key={label}><a className="scope-link-card" href={`/scope/${slug}`} aria-label={`Open ${label} scope topics`}><img src={image} alt="" /><h3>{label}</h3></a></article>)}</div></section></PageLayout>;
+}
+
+function ScopeDetailPage({ detail }: { detail: ScopeDetail }) {
+  return <PageLayout><section className="scope-detail-page"><div className="scope-detail-content"><h2>{detail.title}</h2><ul>{detail.topics.map((topic) => <li key={topic}>{topic}</li>)}</ul><a className="scope-back-link" href="/scope"><ChevronLeft aria-hidden="true" /> Back to Scope</a></div></section></PageLayout>;
 }
 
 function SpeakersPage() {
@@ -293,6 +323,10 @@ export default function ConferenceSite() {
   let page: React.ReactNode;
   if (path === "/") page = <HomePage />;
   else if (path === "/scope") page = <ScopePage />;
+  else if (path.startsWith("/scope/")) {
+    const detail = scopeDetails.find(({ slug }) => `/scope/${slug}` === path);
+    page = detail ? <ScopeDetailPage detail={detail} /> : <ScopePage />;
+  }
   else if (path === "/key-speakers") page = <SpeakersPage />;
   else if (path === "/abstract-submission") page = <AbstractPage />;
   else if (path === "/registration") page = <RegistrationPage />;
@@ -304,5 +338,6 @@ export default function ConferenceSite() {
   else if (path === "/icbsee-2018") page = <ChaptersPage initialYear="2018" />;
   else page = <ChaptersPage />;
 
-  return <div className="conference-site"><Header activePath={path} onMenuOpen={() => setMobileOpen(true)} />{page}{mobileOpen && <MobileNavigation activePath={path} onClose={() => setMobileOpen(false)} />}</div>;
+  const activePath = path.startsWith("/scope/") ? "/scope" : path;
+  return <div className="conference-site"><Header activePath={activePath} onMenuOpen={() => setMobileOpen(true)} />{page}{mobileOpen && <MobileNavigation activePath={activePath} onClose={() => setMobileOpen(false)} />}</div>;
 }
