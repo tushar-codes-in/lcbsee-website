@@ -11,6 +11,7 @@ const assets = {
   logo: "/media/lcbsee/icbsee-logo.png",
   nitr: "/media/lcbsee/nitr-logo.png",
   building: "/media/lcbsee/bm-building.jpg",
+  heroVideo: "/media/lcbsee/icbsee-nitr-campus-hero.mp4",
   fees: "/media/lcbsee/registration-fees.jpg",
   qr: "/media/lcbsee/payment-qr.png",
   social: {
@@ -230,20 +231,22 @@ function HomePage() {
   return (
     <main className="home-page">
       <section className="home-building">
+        <video className="home-building-video" autoPlay muted loop playsInline aria-hidden="true">
+          <source src={assets.heroVideo} type="video/mp4" />
+        </video>
         <div className="home-building-overlay">
           <section className="home-announcement" aria-label="Abstract submission announcement">
             <div className="announcement-marquee">
               <div className="desktop-announcement">
-                <span>LAST DATE FOR ABSTRACT SUBMISSION IS EXTENDED TILL 15 OCTOBER 2026 !!!</span>
+                <span>ABSTRACT SUBMISSION DATE: 15TH OCTOBER 2026</span>
                 <span>ABSTRACT WILL NOT BE ACCEPTED AFTER THIS DATE</span>
               </div>
               <div className="announcement-block-track">
                 {[0, 1].map((block) => (
                   <div className="announcement-block" aria-hidden={block === 1} key={block}>
-                    <span>LAST DATE FOR</span>
                     <span>ABSTRACT SUBMISSION</span>
-                    <span>IS EXTENDED TILL 15</span>
-                    <span>OCTOBER 2026 !!!</span>
+                    <span>DATE: 15TH OCTOBER</span>
+                    <span>2026</span>
                     <span>ABSTRACT WILL NOT BE</span>
                     <span>ACCEPTED AFTER THIS</span>
                     <span>DATE</span>
@@ -256,6 +259,11 @@ function HomePage() {
             <div className="home-actions">
               <a href="/abstract-submission">SUBMIT ABSTRACT</a>
               <a href="https://fd00b575-d8aa-4068-b108-b2d6ea0d7a6b.filesusr.com/ugd/51ff08_17e0a508f0f44925b654e2d6924abec9.pdf" target="_blank" rel="noreferrer">TECHNICAL SCHEDULE</a>
+            </div>
+            <div className="home-resource-links" id="awards" aria-label="Conference resources">
+              <a href="/copy-of-scope">PUBLICATIONS</a>
+              <a href="#awards" aria-current="page">AWARDS</a>
+              <a href="/reach-rourkela">REACH NITR</a>
             </div>
             <div className="event-details">
               <CalendarDays className="event-symbol" aria-hidden="true" />
@@ -280,7 +288,7 @@ function ScopePage() {
 }
 
 function ScopeDetailPage({ detail }: { detail: ScopeDetail }) {
-  return <PageLayout><section className="scope-detail-page"><div className="scope-detail-content"><h2>{detail.title}</h2><ul>{detail.topics.map((topic) => <li key={topic}>{topic}</li>)}</ul><a className="scope-back-link" href="/scope"><ChevronLeft aria-hidden="true" /> Back to Scope</a></div></section></PageLayout>;
+  return <PageLayout><section className="scope-detail-page" style={{ backgroundImage: `linear-gradient(rgba(213,255,157,.88), rgba(213,255,157,.88)), url(${detail.image})` }}><div className="scope-detail-content"><h2>{detail.title}</h2><ul>{detail.topics.map((topic) => <li key={topic}>{topic}</li>)}</ul><a className="scope-back-link" href="/scope"><ChevronLeft aria-hidden="true" /> Back to Scope</a></div></section></PageLayout>;
 }
 
 function SpeakersPage() {
@@ -292,11 +300,11 @@ function AbstractPage() {
 }
 
 function RegistrationPage() {
-  return <PageLayout><section className="registration-page" style={{ backgroundImage: `linear-gradient(rgba(222,255,162,.89),rgba(222,255,162,.89)),url(${assets.building})` }}><div className="registration-content"><h2>REGISTRATION</h2><h3>The steps for registering in ICBSEE 2026 are as follows:</h3><ol><li>Click the registration form link below to open the conference registration form.<br /><a href="https://docs.google.com/forms/d/e/1FAIpQLSf8g_EFINqjGCwlsOezldfTWBVx2DxZBgl0n4t_CevR_0X3cg/viewform?usp=publish-editor" target="_blank" rel="noreferrer">Registration Link</a></li><li>Fill in all the required personal, academic/professional, and contact details accurately.</li><li>Upload the required documents and payment proof (if applicable), then carefully review all the information entered.</li><li>Click Submit to complete your registration. Please save or take a screenshot of the confirmation page for future reference.</li></ol><h2 className="fee-title">REGISTRATION FEES</h2><h4>Early Bird Registration (15th October, 2026)</h4><img className="fees-image" src={assets.fees} alt="ICBSEE registration fees" /><div className="payment-details"><div><h3>Payment Details</h3><p>Participants may pay the registration fee using UPI (scan the QR code), NEFT, or Demand Draft (DD).</p><ul><li>UPI ID: 2804180418@sbi (or scan the QR code provided)</li><li>NEFT: A/c No. 36734418111 | IFSC: SBIN0002109</li><li>Demand Draft: Drawn in favor of “CONFERENCE NIT ROURKELA”, payable at SBI NIT Campus Branch, Rourkela.</li></ul><p>Note: Kindly upload the payment receipt/transaction proof while submitting the registration form for successful confirmation.</p></div><img src={assets.qr} alt="SBI UPI QR code" /></div></div></section></PageLayout>;
+  return <PageLayout><section className="registration-page" style={{ backgroundImage: `linear-gradient(rgba(222,255,162,.89),rgba(222,255,162,.89)),url(${assets.building})` }}><div className="registration-content"><h2>REGISTRATION</h2><h3>The steps for registering in ICBSEE 2026 are as follows:</h3><ol className="registration-steps"><li><span>01</span><div>Click the registration form link below to open the conference registration form.<br /><a href="https://docs.google.com/forms/d/e/1FAIpQLSf8g_EFINqjGCwlsOezldfTWBVx2DxZBgl0n4t_CevR_0X3cg/viewform?usp=publish-editor" target="_blank" rel="noreferrer">Registration Link</a></div></li><li><span>02</span><div>Fill in all the required personal, academic/professional, and contact details accurately.</div></li><li><span>03</span><div>Upload the required documents and payment proof (if applicable), then carefully review all the information entered.</div></li><li><span>04</span><div>Click Submit to complete your registration. Please save or take a screenshot of the confirmation page for future reference.</div></li></ol><h2 className="fee-title">REGISTRATION FEES</h2><h4>Early Bird Registration (15th October, 2026)</h4><div className="fee-table-frame"><img className="fees-image" src={assets.fees} alt="ICBSEE registration fees" /></div><div className="payment-details"><div><h3>Payment Details</h3><p>Participants may pay the registration fee using UPI (scan the QR code), NEFT, or Demand Draft (DD).</p><ul><li>UPI ID: 2804180418@sbi (or scan the QR code provided)</li><li>NEFT: A/c No. 36734418111 | IFSC: SBIN0002109</li><li>Demand Draft: Drawn in favor of “CONFERENCE NIT ROURKELA”, payable at SBI NIT Campus Branch, Rourkela.</li></ul><p>Note: Kindly upload the payment receipt/transaction proof while submitting the registration form for successful confirmation.</p></div><img src={assets.qr} alt="SBI UPI QR code" /></div></div></section></PageLayout>;
 }
 
 function SponsorsPage() {
-  return <PageLayout><section className="lime-field sponsors-page"><h2>SPONSORS</h2><div className="sponsor-grid"><a href="https://svscientific87.com/" target="_blank" rel="noreferrer"><img src="/media/lcbsee/sponsor-sv-scientific.jpg" alt="SV Scientific" /></a><a href="https://azurebiosystems.com/" target="_blank" rel="noreferrer"><img src="/media/lcbsee/sponsor-azure.png" alt="Azure Biosystems" /></a><a href="https://nitrkl.ac.in/" target="_blank" rel="noreferrer"><img src="/media/lcbsee/sponsor-nitr.jpg" alt="NIT Rourkela" /></a><a href="https://www.igenels.com/" target="_blank" rel="noreferrer"><img src="/media/lcbsee/sponsor-igene.jpg" alt="iGene Labserve" /></a></div></section></PageLayout>;
+  return <PageLayout><section className="lime-field sponsors-page"><h2>SPONSORS</h2><div className="sponsor-grid"><a href="https://svscientific87.com/" target="_blank" rel="noreferrer"><img src="/media/lcbsee/sponsor-sv-scientific.jpg" alt="SV Scientific" /></a><a href="https://azurebiosystems.com/" target="_blank" rel="noreferrer"><img src="/media/lcbsee/sponsor-azure.png" alt="Azure Biosystems" /></a><a href="https://www.igenels.com/" target="_blank" rel="noreferrer"><img src="/media/lcbsee/sponsor-igene.jpg" alt="iGene Labserve" /></a><a href="https://www.ymc.co.jp/en/" target="_blank" rel="noreferrer"><img src="/media/lcbsee/sponsor-ymc.jpg" alt="YMC India" /></a><a href="https://labindia.com/" target="_blank" rel="noreferrer"><img src="/media/lcbsee/sponsor-labindia.png" alt="Labindia Instruments" /></a><a href="https://www.tarsons.com/" target="_blank" rel="noreferrer"><img src="/media/lcbsee/sponsor-tarsons.png" alt="Tarsons" /></a><a href="https://www.himedialabs.com/" target="_blank" rel="noreferrer"><img src="/media/lcbsee/sponsor-himedia.png" alt="HiMedia" /></a><a href="https://www.eppendorf.com/" target="_blank" rel="noreferrer"><img src="/media/lcbsee/sponsor-eppendorf.png" alt="Eppendorf" /></a></div></section></PageLayout>;
 }
 
 function PublicationsPage() {
