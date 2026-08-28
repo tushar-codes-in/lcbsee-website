@@ -30,6 +30,7 @@ const navItems = [
   ["Registration", "/registration"],
   ["Sponsors", "/sponsors"],
   ["Publications", "/copy-of-scope"],
+  ["Awards", "/awards"],
   ["Reach Rourkela", "/reach-rourkela"],
 ] as const;
 
@@ -242,12 +243,9 @@ function HomePage() {
               <a href="/abstract-submission">SUBMIT ABSTRACT</a>
               <a href="https://fd00b575-d8aa-4068-b108-b2d6ea0d7a6b.filesusr.com/ugd/51ff08_17e0a508f0f44925b654e2d6924abec9.pdf" target="_blank" rel="noreferrer">TECHNICAL SCHEDULE</a>
             </div>
-            <section className="home-awards" id="awards" aria-label="Awards">
-              <h2>Awards</h2>
-              <p>To be Announced Later</p>
-            </section>
             <div className="home-resource-links" aria-label="Conference resources">
               <a href="/copy-of-scope">PUBLICATIONS</a>
+              <a href="/awards">AWARDS</a>
               <a href="/reach-rourkela">REACH NITR</a>
             </div>
             <div className="event-details">
@@ -300,6 +298,10 @@ function ReachPage() {
   return <PageLayout><section className="lime-field reach-page"><h2>REACHING ROURKELA</h2><div className="reach-map"><iframe title="NIT Rourkela map" src="https://www.google.com/maps?q=National%20Institute%20of%20Technology%20Rourkela&output=embed" loading="lazy" /></div></section></PageLayout>;
 }
 
+function AwardsPage() {
+  return <PageLayout><section className="lime-field awards-page"><h2>Awards</h2><p className="awards-message">To be Announced Later</p></section></PageLayout>;
+}
+
 function ChaptersPage({ initialYear }: { initialYear?: string }) {
   return <PageLayout><section className="lime-field chapters-page"><h2>{initialYear ? `ICBSEE ${initialYear}` : "PAST CHAPTERS"}</h2>{initialYear ? <div className="chapter-blank" aria-label={`Content placeholder for ICBSEE ${initialYear}`} /> : <><nav className="chapter-year-list" aria-label="Past chapter years">{chapterItems.map(([label, href]) => <a href={href} key={href}>{label}</a>)}</nav><div className="chapter-blank" aria-hidden="true" /></>}</section></PageLayout>;
 }
@@ -322,6 +324,7 @@ export default function ConferenceSite() {
   else if (path === "/registration") page = <RegistrationPage />;
   else if (path === "/sponsors") page = <SponsorsPage />;
   else if (path === "/copy-of-scope") page = <PublicationsPage />;
+  else if (path === "/awards") page = <AwardsPage />;
   else if (path === "/reach-rourkela") page = <ReachPage />;
   else if (path === "/icbsee-2022") page = <ChaptersPage initialYear="2022" />;
   else if (path === "/icbsee-2023") page = <ChaptersPage initialYear="2023" />;
