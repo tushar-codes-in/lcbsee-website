@@ -449,3 +449,8 @@ a { color: inherit; }
   .chapter-year-list a { font-size: 26px; }
   .chapter-blank { min-height: 290px; }
 }
+
+/* Desktop-only overlap correction: place Awards content below the overlaid navigation. */
+@media (min-width: 769px) {
+  .awards-page { padding-top: 130px; }
+}
