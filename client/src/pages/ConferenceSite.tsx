@@ -35,8 +35,8 @@ const navItems = [
 
 const chapterItems = [
   ["ICBSEE 2022", "/icbsee-2022"],
-  ["ICBSEE 2020", "/icbsee-2020-1"],
-  ["ICBSEE 2018", "/icbsee-2018"],
+  ["ICBSEE 2023", "/icbsee-2023"],
+  ["ICBSEE 2024", "/icbsee-2024"],
 ] as const;
 
 const speakers = [
@@ -94,24 +94,6 @@ const journals = [
   ["JOURNAL OF ENVIRONMENTAL MANAGEMENT", "/media/lcbsee/journal-environmental-management.jpg", "https://www.sciencedirect.com/journal/journal-of-environmental-management"],
   ["WATER, AIR & SOIL POLLUTION", "/media/lcbsee/journal-water-air-soil.webp", "https://link.springer.com/journal/11270"],
 ] as const;
-
-const galleryImages = [
-  "/media/lcbsee/IMG_1923.jpg",
-  "/media/lcbsee/IMG_0117.jpg",
-  "/media/lcbsee/IMG_0218.jpg",
-  "/media/lcbsee/IMG_0219.jpg",
-  "/media/lcbsee/IMG_0220.jpg",
-  "/media/lcbsee/IMG_0222.jpg",
-  "/media/lcbsee/IMG_0223.jpg",
-  "/media/lcbsee/IMG_1054.jpg",
-  "/media/lcbsee/IMG_1147.jpg",
-  "/media/lcbsee/IMG_1229.jpg",
-  "/media/lcbsee/IMG_1251.jpg",
-  "/media/lcbsee/IMG_1325.jpg",
-  "/media/lcbsee/IMG_1410.jpg",
-  "/media/lcbsee/IMG_1495.jpg",
-  "/media/lcbsee/IMG_1620.jpg",
-];
 
 type Countdown = { days: number; hours: number; minutes: number; seconds: number };
 
@@ -260,9 +242,12 @@ function HomePage() {
               <a href="/abstract-submission">SUBMIT ABSTRACT</a>
               <a href="https://fd00b575-d8aa-4068-b108-b2d6ea0d7a6b.filesusr.com/ugd/51ff08_17e0a508f0f44925b654e2d6924abec9.pdf" target="_blank" rel="noreferrer">TECHNICAL SCHEDULE</a>
             </div>
-            <div className="home-resource-links" id="awards" aria-label="Conference resources">
+            <section className="home-awards" id="awards" aria-label="Awards">
+              <h2>Awards</h2>
+              <p>To be Announced Later</p>
+            </section>
+            <div className="home-resource-links" aria-label="Conference resources">
               <a href="/copy-of-scope">PUBLICATIONS</a>
-              <a href="#awards" aria-current="page">AWARDS</a>
               <a href="/reach-rourkela">REACH NITR</a>
             </div>
             <div className="event-details">
@@ -308,7 +293,7 @@ function SponsorsPage() {
 }
 
 function PublicationsPage() {
-  return <PageLayout><section className="lime-field publications-page"><h2>CONTACTED JOURNALS</h2><div className="journal-grid">{journals.map(([title, image, href]) => <article key={title}><a href={href} target="_blank" rel="noreferrer"><img src={image} alt={title} /><h3>{title}</h3></a></article>)}</div></section></PageLayout>;
+  return <PageLayout><section className="lime-field publications-page"><h2>CONTACTED JOURNALS</h2><p className="publications-message">Soon to be Announced</p></section></PageLayout>;
 }
 
 function ReachPage() {
@@ -316,10 +301,7 @@ function ReachPage() {
 }
 
 function ChaptersPage({ initialYear }: { initialYear?: string }) {
-  const [current, setCurrent] = useState(initialYear === "2022" ? 0 : initialYear === "2020" ? 5 : initialYear === "2018" ? 10 : 0);
-  const [lightbox, setLightbox] = useState(false);
-  const move = (delta: number) => setCurrent((value) => (value + delta + galleryImages.length) % galleryImages.length);
-  return <PageLayout><section className="lime-field chapters-page"><h2>{initialYear ? `ICBSEE ${initialYear}` : "PAST CHAPTERS"}</h2><div className="gallery"><button onClick={() => move(-1)} aria-label="Previous photo"><ChevronLeft /></button><img onClick={() => setLightbox(true)} src={galleryImages[current]} alt={`Past ICBSEE chapter, image ${current + 1}`} /><button onClick={() => move(1)} aria-label="Next photo"><ChevronRight /></button><span>{current + 1}/{galleryImages.length}</span></div>{lightbox && <div className="lightbox" role="dialog" aria-modal="true"><button className="lightbox-close" onClick={() => setLightbox(false)} aria-label="Close photo"><X /></button><button className="lightbox-arrow left" onClick={() => move(-1)} aria-label="Previous photo"><ChevronLeft /></button><img src={galleryImages[current]} alt="Expanded past ICBSEE chapter" /><button className="lightbox-arrow right" onClick={() => move(1)} aria-label="Next photo"><ChevronRight /></button></div>}</section></PageLayout>;
+  return <PageLayout><section className="lime-field chapters-page"><h2>{initialYear ? `ICBSEE ${initialYear}` : "PAST CHAPTERS"}</h2>{initialYear ? <div className="chapter-blank" aria-label={`Content placeholder for ICBSEE ${initialYear}`} /> : <><nav className="chapter-year-list" aria-label="Past chapter years">{chapterItems.map(([label, href]) => <a href={href} key={href}>{label}</a>)}</nav><div className="chapter-blank" aria-hidden="true" /></>}</section></PageLayout>;
 }
 
 export default function ConferenceSite() {
@@ -342,8 +324,9 @@ export default function ConferenceSite() {
   else if (path === "/copy-of-scope") page = <PublicationsPage />;
   else if (path === "/reach-rourkela") page = <ReachPage />;
   else if (path === "/icbsee-2022") page = <ChaptersPage initialYear="2022" />;
-  else if (path === "/icbsee-2020-1") page = <ChaptersPage initialYear="2020" />;
-  else if (path === "/icbsee-2018") page = <ChaptersPage initialYear="2018" />;
+  else if (path === "/icbsee-2023") page = <ChaptersPage initialYear="2023" />;
+  else if (path === "/icbsee-2024") page = <ChaptersPage initialYear="2024" />;
+  else if (path === "/icbsee-2020-1" || path === "/icbsee-2018") page = <ChaptersPage />;
   else page = <ChaptersPage />;
 
   const activePath = path.startsWith("/scope/") ? "/scope" : path;

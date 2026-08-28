@@ -437,3 +437,20 @@ a { color: inherit; }
 @media (prefers-reduced-motion: reduce) {
   .home-building-video { display: none; }
 }
+
+/* 28 August team request only: reserve the Awards, Publications, and Past Chapters content areas without changing shared site styling. */
+.home-awards { order: 4; width: min(420px, 84%); margin: 18px auto 0; padding: 8px 16px 9px; border: 1px solid #075d2c; background: #fff400; color: #075d2c; text-align: center; }
+.home-awards h2 { margin: 0; font-family: var(--condensed); font-size: clamp(19px, 2vw, 28px); font-weight: 900; line-height: 1; }
+.home-awards p { margin: 5px 0 0; font-family: var(--condensed); font-size: clamp(13px, 1.3vw, 18px); font-weight: 700; line-height: 1.1; }
+.home-resource-links a:nth-child(2) { border-color: #e8ffe1; background: rgba(7,91,42,.9); color: #fff; }
+.publications-message { margin: 48px 0 0; color: #075d2c; font-family: var(--condensed); font-size: clamp(24px, 3vw, 42px); font-weight: 700; text-align: center; }
+.chapter-year-list { display: flex; justify-content: center; gap: 28px; margin: 48px auto 0; }
+.chapter-year-list a { color: #075d2c; font-family: var(--condensed); font-size: clamp(22px, 2.4vw, 34px); font-weight: 700; text-decoration: underline; }
+.chapter-blank { min-height: 300px; }
+@media (max-width: 780px) {
+  .home-awards { width: min(86%, 330px); margin-top: 14px; padding: 9px 12px; }
+  .publications-message { margin-top: 34px; font-size: 27px; }
+  .chapter-year-list { flex-direction: column; align-items: center; gap: 17px; margin-top: 30px; }
+  .chapter-year-list a { font-size: 26px; }
+  .chapter-blank { min-height: 290px; }
+}
