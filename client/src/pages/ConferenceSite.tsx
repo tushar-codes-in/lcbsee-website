@@ -43,10 +43,7 @@ const chapterItems = [
 const speakers = [
   ["/media/lcbsee/speaker-nk-dhal.png", "Prof. N. K. Dhal", "CSIR IMMT"],
   ["/media/lcbsee/speaker-pakshirajan.png", "Prof. K. Pakshirajan", "IIT Guwahati, India"],
-  ["/media/lcbsee/speaker-dasgupta.png", "Dr. Santanu Dasgupta", "Senior Vice President at Reliance, India"],
   ["/media/lcbsee/speaker-ulla-lassi.png", "Prof. Ulla Lassi", "University of Oulu, Finland"],
-  ["/media/lcbsee/speaker-rintu-banerjee.png", "Prof. Rintu Banerjee", "IIT Kharagpur, India"],
-  ["/media/lcbsee/speaker-indumathi.png", "Prof. Indumathi M. Nambi", "IIT Madras, India"],
   ["/media/lcbsee/speaker-ramkrishna.png", "Prof. Ramkrishna Sen", "IIT Kharagpur, India"],
   ["/media/lcbsee/speaker-sanjoy-ghosh.png", "Prof. Sanjoy Ghosh", "IIT Roorkee, India"],
 ] as const;
