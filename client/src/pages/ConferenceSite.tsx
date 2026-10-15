@@ -36,8 +36,8 @@ const navItems = [
 
 const chapterItems = [
   ["ICBSEE 2022", "/icbsee-2022"],
-  ["ICBSEE 2023", "/icbsee-2023"],
-  ["ICBSEE 2024", "/icbsee-2024"],
+  ["ICBSEE 2020", "/icbsee-2020"],
+  ["ICBSEE 2018", "/icbsee-2024"],
 ] as const;
 
 const speakers = [
@@ -218,14 +218,14 @@ function HomePage() {
           <section className="home-announcement" aria-label="Abstract submission announcement">
             <div className="announcement-marquee">
               <div className="desktop-announcement">
-                <span>ABSTRACT SUBMISSION DATE: 15TH OCTOBER 2026</span>
+                <span>ABSTRACT SUBMISSION DATE: 31st OCTOBER 2026</span>
                 <span>ABSTRACT WILL NOT BE ACCEPTED AFTER THIS DATE</span>
               </div>
               <div className="announcement-block-track">
                 {[0, 1].map((block) => (
                   <div className="announcement-block" aria-hidden={block === 1} key={block}>
                     <span>ABSTRACT SUBMISSION</span>
-                    <span>DATE: 15TH OCTOBER</span>
+                    <span>DATE: 31st OCTOBER</span>
                     <span>2026</span>
                     <span>ABSTRACT WILL NOT BE</span>
                     <span>ACCEPTED AFTER THIS</span>
