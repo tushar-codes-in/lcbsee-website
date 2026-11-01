@@ -225,7 +225,7 @@ function HomePage() {
                 {[0, 1].map((block) => (
                   <div className="announcement-block" aria-hidden={block === 1} key={block}>
                     <span>ABSTRACT SUBMISSION</span>
-                    <span>DATE: 31st OCTOBER</span>
+                    <span>DATE: 7th November</span>
                     <span>2026</span>
                     <span>ABSTRACT WILL NOT BE</span>
                     <span>ACCEPTED AFTER THIS</span>
@@ -276,7 +276,7 @@ function SpeakersPage() {
 }
 
 function AbstractPage() {
-  return <PageLayout><section className="lime-field abstract-page"><h2>ABSTRACT<br />SUBMISSION</h2><div className="abstract-copy"><p>The participants can submit 2 abstracts: - for invited speakers, both oral presentations while for student participants 1 flash talk and 1 poster presentation.</p><p>The final version of the abstract should be submitted by sending it to <a href="mailto:icbsee2026@gmail.com">icbsee2026@gmail.com</a></p><h3>IMPORTANT DATES</h3><p className="important-date">LAST DATE FOR ABSTRACT SUBMISSION<br />15 OCTOBER, 2026<br /><br />LAST DATE FOR FINAL REGISTRATION<br />15 OCTOBER, 2026</p></div></section></PageLayout>;
+  return <PageLayout><section className="lime-field abstract-page"><h2>ABSTRACT<br />SUBMISSION</h2><div className="abstract-copy"><p>The participants can submit 2 abstracts: - for invited speakers, both oral presentations while for student participants 1 flash talk and 1 poster presentation.</p><p>The final version of the abstract should be submitted by sending it to <a href="mailto:icbsee2026@gmail.com">icbsee2026@gmail.com</a></p><h3>IMPORTANT DATES</h3><p className="important-date">LAST DATE FOR ABSTRACT SUBMISSION<br />7th November, 2026<br /><br />LAST DATE FOR FINAL REGISTRATION<br />7th November, 2026</p></div></section></PageLayout>;
 }
 
 function RegistrationPage() {
