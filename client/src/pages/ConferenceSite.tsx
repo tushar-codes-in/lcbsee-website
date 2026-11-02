@@ -35,9 +35,10 @@ const navItems = [
 ] as const;
 
 const chapterItems = [
-  ["ICBSEE 2022", "/icbsee-2022"],
+  ["ICBSEE 2018", "/icbsee-2018"],
   ["ICBSEE 2020", "/icbsee-2020"],
-  ["ICBSEE 2018", "/icbsee-2024"],
+  ["ICBSEE 2022", "/icbsee-2022"],
+  ["ICBSEE 2024", "/icbsee-2024"],
 ] as const;
 
 const speakers = [
@@ -247,7 +248,7 @@ function HomePage() {
             </div>
             <div className="event-details">
               <CalendarDays className="event-symbol" aria-hidden="true" />
-              <p className="event-date">2 DECEMBER - 4 <br />December, 2026</p>
+              <p className="event-date">7TH NOVEMBER, 2026</p>
               <MapPin className="event-symbol" aria-hidden="true" />
               <p className="event-location">Department of Biotechnology <br />and Medical Engineering, NIT <br />Rourkela</p>
             </div>
@@ -288,7 +289,7 @@ function SponsorsPage() {
 }
 
 function PublicationsPage() {
-  return <PageLayout><section className="lime-field publications-page"><h2>CONTACTED JOURNALS</h2><p className="publications-message">Soon to be Announced</p></section></PageLayout>;
+  return <PageLayout><section className="lime-field publications-page"><h2>CONTACTED JOURNALS</h2><p className="publications-message">Soon to be Announced</p><div className="publication-entry"><h3>Environmental Quality Management</h3><p>Environmental Quality Management is a peer-reviewed academic journal published by John Wiley &amp; Sons. <strong>(Impact Factor: 1.5)</strong></p></div></section></PageLayout>;
 }
 
 function ReachPage() {
@@ -323,10 +324,10 @@ export default function ConferenceSite() {
   else if (path === "/copy-of-scope") page = <PublicationsPage />;
   else if (path === "/awards") page = <AwardsPage />;
   else if (path === "/reach-rourkela") page = <ReachPage />;
+  else if (path === "/icbsee-2018") page = <ChaptersPage initialYear="2018" />;
+  else if (path === "/icbsee-2020" || path === "/icbsee-2020-1") page = <ChaptersPage initialYear="2020" />;
   else if (path === "/icbsee-2022") page = <ChaptersPage initialYear="2022" />;
-  else if (path === "/icbsee-2023") page = <ChaptersPage initialYear="2023" />;
   else if (path === "/icbsee-2024") page = <ChaptersPage initialYear="2024" />;
-  else if (path === "/icbsee-2020-1" || path === "/icbsee-2018") page = <ChaptersPage />;
   else page = <ChaptersPage />;
 
   const activePath = path.startsWith("/scope/") ? "/scope" : path;
