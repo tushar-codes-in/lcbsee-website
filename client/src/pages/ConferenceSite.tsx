@@ -219,7 +219,7 @@ function HomePage() {
           <section className="home-announcement" aria-label="Abstract submission announcement">
             <div className="announcement-marquee">
               <div className="desktop-announcement">
-                <span>ABSTRACT SUBMISSION DATE: 7TH NOVEMBER 2026</span>
+                <span>ABSTRACT SUBMISSION DATE: 15TH NOVEMBER 2026</span>
                 <span>ABSTRACT WILL NOT BE ACCEPTED AFTER THIS DATE</span>
               </div>
               <div className="announcement-block-track">
