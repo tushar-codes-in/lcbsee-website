@@ -147,7 +147,7 @@ function Header({ activePath, onMenuOpen }: { activePath: string; onMenuOpen: ()
         <a className="masthead-logo masthead-logo-left" href="/" aria-label="ICBSEE home">
           <img src={assets.logo} alt="ICBSEE logo" />
         </a>
-        <h1>INTERNATIONAL CONFERENCE ON BIOPROCESS AND SUSTAINABLE<br className="desktop-break" /> ENVIRONMENT AND ENERGY</h1>
+        <h1>INTERNATIONAL CONFERENCE ON BIOPROCESS FOR SUSTAINABLE<br className="desktop-break" /> ENVIRONMENT AND ENERGY</h1>
         <a className="masthead-logo masthead-logo-right" href="https://nitrkl.ac.in/" target="_blank" rel="noreferrer" aria-label="NIT Rourkela">
           <img src={assets.nitr} alt="NIT Rourkela logo" />
         </a>
@@ -248,7 +248,7 @@ function HomePage() {
             </div>
             <div className="event-details">
               <CalendarDays className="event-symbol" aria-hidden="true" />
-              <p className="event-date">7TH NOVEMBER, 2026</p>
+              <p className="event-date">15TH NOVEMBER, 2026</p>
               <MapPin className="event-symbol" aria-hidden="true" />
               <p className="event-location">Department of Biotechnology <br />and Medical Engineering, NIT <br />Rourkela</p>
             </div>
