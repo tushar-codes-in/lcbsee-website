@@ -68,17 +68,17 @@ const speakers = [
     "IIT Roorkee, India",
   ],
   [
-    "/media/lcbsee/speaker-ji-dong-gu.jpeg",
+    "/media/lcbsee/Dr.%20Ji%20Dong%20Gu.jpeg",
     "Dr. Ji Dong Gu",
     "Professor, Guangdong Technion Israel Institute of Technology",
   ],
   [
-    "/media/lcbsee/speaker-mukesh-kumar-gupta.jpeg",
+    "/media/lcbsee/Prof.%20Mukesh%20Kumar%20Gupta.jpeg",
     "Prof. Mukesh Kumar Gupta",
     "Director, ICMR-NIPCR / NARFBR",
   ],
   [
-    "/media/lcbsee/speaker-punyasloke-bhadury.jpeg",
+    "/media/lcbsee/Prof.%20Punyasloke%20Bhadury.jpeg",
     "Prof. Punyasloke Bhadury",
     "Professor, IISER Kolkata",
   ],
