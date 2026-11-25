@@ -68,22 +68,21 @@ const speakers = [
     "IIT Roorkee, India",
   ],
   [
-    "/media/lcbsee/speaker-ji-dong-gu.png",
+    "/media/lcbsee/speaker-ji-dong-gu.jpeg",
     "Dr. Ji Dong Gu",
     "Professor, Guangdong Technion Israel Institute of Technology",
   ],
   [
-    "/media/lcbsee/speaker-mukesh-kumar-gupta.png",
+    "/media/lcbsee/speaker-mukesh-kumar-gupta.jpeg",
     "Prof. Mukesh Kumar Gupta",
     "Director, ICMR-NIPCR / NARFBR",
   ],
   [
-    "/media/lcbsee/speaker-punyasloke-bhadury.png",
+    "/media/lcbsee/speaker-punyasloke-bhadury.jpeg",
     "Prof. Punyasloke Bhadury",
     "Professor, IISER Kolkata",
   ],
 ] as const;
-
 type ScopeDetail = {
   slug: string;
   label: string;
