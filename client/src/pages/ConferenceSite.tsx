@@ -42,11 +42,46 @@ const chapterItems = [
 ] as const;
 
 const speakers = [
-  ["/media/lcbsee/speaker-nk-dhal.png", "Prof. N. K. Dhal", "CSIR IMMT"],
-  ["/media/lcbsee/speaker-pakshirajan.png", "Prof. K. Pakshirajan", "IIT Guwahati, India"],
-  ["/media/lcbsee/speaker-ulla-lassi.png", "Prof. Ulla Lassi", "University of Oulu, Finland"],
-  ["/media/lcbsee/speaker-ramkrishna.png", "Prof. Ramkrishna Sen", "IIT Kharagpur, India"],
-  ["/media/lcbsee/speaker-sanjoy-ghosh.png", "Prof. Sanjoy Ghosh", "IIT Roorkee, India"],
+  [
+    "/media/lcbsee/speaker-nk-dhal.png",
+    "Prof. N. K. Dhal",
+    "CSIR IMMT",
+  ],
+  [
+    "/media/lcbsee/speaker-pakshirajan.png",
+    "Prof. K. Pakshirajan",
+    "IIT Guwahati, India",
+  ],
+  [
+    "/media/lcbsee/speaker-ulla-lassi.png",
+    "Prof. Ulla Lassi",
+    "University of Oulu, Finland",
+  ],
+  [
+    "/media/lcbsee/speaker-ramkrishna.png",
+    "Prof. Ramkrishna Sen",
+    "IIT Kharagpur, India",
+  ],
+  [
+    "/media/lcbsee/speaker-sanjoy-ghosh.png",
+    "Prof. Sanjoy Ghosh",
+    "IIT Roorkee, India",
+  ],
+  [
+    "/media/lcbsee/speaker-ji-dong-gu.png",
+    "Dr. Ji Dong Gu",
+    "Professor, Guangdong Technion Israel Institute of Technology",
+  ],
+  [
+    "/media/lcbsee/speaker-mukesh-kumar-gupta.png",
+    "Prof. Mukesh Kumar Gupta",
+    "Director, ICMR-NIPCR / NARFBR",
+  ],
+  [
+    "/media/lcbsee/speaker-punyasloke-bhadury.png",
+    "Prof. Punyasloke Bhadury",
+    "Professor, IISER Kolkata",
+  ],
 ] as const;
 
 type ScopeDetail = {
