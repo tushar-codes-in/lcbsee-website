@@ -88,7 +88,6 @@ const speakers = [
     "Professor of Petroleum and Environmental Biotechnology, Egyptian Petroleum Research Institute (EPRI) and Modern Sciences and Arts (MSA) University, Egypt",
   ],
 ] as const;
-] as const;
 type ScopeDetail = {
   slug: string;
   label: string;
