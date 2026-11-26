@@ -44,7 +44,7 @@ const chapterItems = [
 const speakers = [
   [
     "/media/lcbsee/speaker-nk-dhal.png",
-    "Prof. N. K. Dhal",
+    "Dr. N. K. Dhal",
     "CSIR IMMT",
   ],
   [
@@ -82,6 +82,12 @@ const speakers = [
     "Prof. Punyasloke Bhadury",
     "Professor, IISER Kolkata",
   ],
+  [
+    "/media/lcbsee/Nour%20Shafik%20Emam%20El-Gendy.jfif",
+    "Dr. Nour Shafik Emam El-Gendy",
+    "Professor of Petroleum and Environmental Biotechnology, Egyptian Petroleum Research Institute (EPRI) and Modern Sciences and Arts (MSA) University, Egypt",
+  ],
+] as const;
 ] as const;
 type ScopeDetail = {
   slug: string;
